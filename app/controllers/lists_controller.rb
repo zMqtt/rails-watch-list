@@ -15,7 +15,7 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
 
     if @list.save
-      redirect_to @list, notice: 'List was successfully created.'
+      redirect_to @list, notice: 'List was created.'
     else
       render :new
     end
@@ -28,6 +28,6 @@ class ListsController < ApplicationController
   end
 
   def list_params
-    params.require(:list).permit(:name, :description)
+    params.require(:list).permit(:name)
   end
 end
